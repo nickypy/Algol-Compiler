@@ -28,6 +28,9 @@ $ (spim) load "out.s"
 $ (spim) run
 ```
 
+#### Examples
+See [examples](https://github.com/nickypy/Algol-Compiler/tree/master/examples) for code examples.
+
 ### Some Basic Syntax
 #### A Basic Program
 Every program requires at least a `BEGIN` and `END` keyword, followed by a `.` which denotes the end of program. Note that the language is not case sensitive. All comments are multiline comments. A comment begins with the keyword `COMMENT` and ends with the first `;`.
