@@ -104,99 +104,21 @@ begin
 end.
 ```
 Entering a new block uses the `begin` and `end` keywords followed by a `;`.
-### Sample Programs
-#### FizzBuzz from 1 to 20
-```c
-begin
-    integer a;
-    a := 1;
 
-    while a < 21 do
-        begin
-    	if (a rem 3) != 0 then
-            if (a rem 5) != 0 then
-                write(a);
-    	if (a rem 3) = 0 then write("fizz");
-    	if (a rem 5) = 0 then write("buzz");
-
-    	writeln("");
-    	a := a + 1;
-        end;
-end.
-```
-
-##### Output
-
-```
-Program Start
-1
-2
-fizz
-4
-buzz
-fizz
-7
-8
-fizz
-buzz
-11
-fizz
-13
-14
-fizzbuzz
-16
-17
-fizz
-19
-buzz
-Program End
-```
-
-
-#### First 10 Fibonacci numbers
-```c
-begin
-    integer n;
-    integer first;
-    integer second;
-
-    n := 0;
-    first := 0;
-    second := 1;
-
-    while n < 10 do
-        begin
-            integer temp;
-            temp = second;
-            second = first + second;
-            first = temp;
-
-            write(first);
-            write(" ");
-
-            n := n + 1;
-        end;
-    writeln("");
-end.
-```
-##### Output
-```
-Program Start
-1 1 2 3 5 8 13 21 34 55
-Program End
-```
 
 #### Extended Backus-Naur Form of the Language
-1.  program     :=  blockst '.'
-2.  statmt      :=  decl | assstat | ifstat | blockst | loopst | iostat | epsilon
-3.  decl        :=  TYPE_ID IDENTIFIER_ID
-4.  assstat     :=  idref  ASSIGNMENT_ID  expression
-5.  ifstat      :=  IF_ID  expression  THEN_ID  statmt
-6.  loopst      :=  WHILE_ID  expression  DO_ID  statmt
-7.  blockst     :=  BEGIN_ID  { statmt SEMICOLON_ID }  END_ID
-8.  iostat	    :=  IO_ID  OPEN_PARENS_ID  idref CLOSING_PARENS_ID | IO_ID  OPEN_PARENS_ID  expression  CLOSING_PARENS_ID
-9.  expression  :=  term { ADD_OP_ID term }
-10. term        :=  relfactor { MULT_OP_ID relfactor }
-11. relfactor   :=  factor  [ RELATIONAL_OP_ID factor ]
-12. factor      :=  idref | LITERAL_ID | BOOLEAN_NOT_ID factor  | OPEN_PARENS_ID  expression  CLOSING_PARENS_ID
-13. idref       :=  IDENTIFIER_ID
+```
+1.  program     ::=  blockst '.'
+2.  statmt      ::=  decl | assstat | ifstat | blockst | loopst | iostat | epsilon
+3.  decl        ::=  TYPE_ID IDENTIFIER_ID
+4.  assstat     ::=  idref  ASSIGNMENT_ID  expression
+5.  ifstat      ::=  IF_ID  expression  THEN_ID  statmt
+6.  loopst      ::=  WHILE_ID  expression  DO_ID  statmt
+7.  blockst     ::=  BEGIN_ID  { statmt SEMICOLON_ID }  END_ID
+8.  iostat	    ::=  IO_ID  OPEN_PARENS_ID  idref CLOSING_PARENS_ID | IO_ID  OPEN_PARENS_ID  expression  CLOSING_PARENS_ID
+9.  expression  ::=  term { ADD_OP_ID term }
+10. term        ::=  relfactor { MULT_OP_ID relfactor }
+11. relfactor   ::=  factor  [ RELATIONAL_OP_ID factor ]
+12. factor      ::=  idref | LITERAL_ID | BOOLEAN_NOT_ID factor  | OPEN_PARENS_ID  expression  CLOSING_PARENS_ID
+13. idref       ::=  IDENTIFIER_ID
+```
